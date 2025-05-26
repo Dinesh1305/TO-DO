@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Done Tasks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: rgb(0, 128, 255);
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .no-tasks {
+            text-align: center;
+            color: #888;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 600px) {
+            th, td {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>✅ Completed Tasks</h2>
+
+    <div th:if="${#lists.isEmpty(Donetasks)}" class="no-tasks">
+        No tasks completed yet.
+    </div>
+
+    <table th:if="${!#lists.isEmpty(Donetasks)}">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Work</th>
+                <th>Created At</th>
+                <th>Completed At</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="task : ${Donetasks}">
+                <td th:text="${task.id}">1</td>
+                <td th:text="${task.work}">Sample Task</td>
+                <td th:text="${#dates.format(task.createdAt, 'yyyy-MM-dd HH:mm:ss')}">2025-05-21 10:00:00</td>
+                <td th:text="${#dates.format(task.CompleteAt, 'yyyy-MM-dd HH:mm:ss')}">2025-05-21 12:00:00</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
