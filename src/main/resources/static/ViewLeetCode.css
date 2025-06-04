@@ -1,0 +1,97 @@
+/* General Page Style */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 30px 20px;
+}
+
+/* Title Style */
+h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+/* Table Styling */
+table {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Header Row */
+th {
+    background-color: #007BFF;
+    color: white;
+    padding: 16px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+/* Body Row */
+td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #eaeaea;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+/* Row Hover Effect */
+tr:hover {
+    background-color: #f0f8ff;
+}
+
+/* Anchor Tag (URL) */
+a {
+    color: #007BFF;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        font-size: 0.85rem;
+        padding: 10px 12px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+button {
+    background-color: #28a745;      /* Green background */
+    color: white;                   /* White text */
+    border: none;                   /* No border */
+    padding: 6px 12px;              /* Some padding */
+    border-radius: 4px;             /* Rounded corners */
+    cursor: pointer;                /* Pointer cursor on hover */
+    font-size: 14px;                /* Font size */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;      /* Darker green on hover */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px rgba(40, 167, 69, 0.5);
+}

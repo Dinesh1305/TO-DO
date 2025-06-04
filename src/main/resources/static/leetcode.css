@@ -1,0 +1,115 @@
+:root {
+    --primary-color: #1e90ff;
+    --primary-color-dark: #0f75d0;
+    --header-color: #1e3799;
+    --background-color: #eaf2fb;
+    --container-bg: #ffffff;
+    --table-header-bg: #1e3799;
+    --table-row-bg: #f1f6fc;
+    --border-color: #dcdde1;
+    --input-border-color: #ccc;
+    --input-focus-border-color: var(--primary-color);
+    --button-bg: var(--primary-color);
+    --button-hover-bg: var(--primary-color-dark);
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, #eaf2fb 0%, #ffffff 100%);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--container-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: var(--header-color);
+    margin-bottom: 24px;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.leetcode-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leetcode-table th, .leetcode-table td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.leetcode-table th {
+    background-color: var(--table-header-bg);
+    color: #ffffff;
+}
+
+.leetcode-table tr:nth-child(even) {
+    background-color: var(--table-row-bg);
+}
+
+.leetcode-table tr:hover {
+    background-color: rgba(30, 57, 153, 0.1);
+}
+
+.leetcode-table a {
+    color: #2980b9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.leetcode-table a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+/* Input styling inside table */
+input[type="text"],
+input[type="url"],
+input[type="number"] {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--input-focus-border-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+/* Button styling */
+button {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: 3px solid rgba(30, 144, 255, 0.5);
+    outline-offset: 2px;
+}

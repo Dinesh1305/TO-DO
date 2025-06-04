@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>All LeetCode Problems</title>
+    <link rel="stylesheet" href="ViewProblem.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Complete LeetCode Problems</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Problem Name</th>
+                    <th>URL</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="prob, iterStat : ${problems}">
+                    <td th:text="${iterStat.index + 1}">1</td>
+                    <td th:text="${prob.name}">Sample Name</td>
+                    <td>
+                        <a th:href="${prob.url}" target="_blank" th:text="${prob.url}">View</a>
+                    </td>
+                    <td>
+                        <form th:action="@{/removeProblem}" method="post">
+                            <input type="hidden" th:name="name" th:value="${prob.name}" />
+                            <input type="hidden" th:name="url" th:value="${prob.url}" />
+                           
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

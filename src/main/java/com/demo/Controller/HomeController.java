@@ -17,4 +17,11 @@ public class HomeController {
 	{
 		return "Add";
 	}
+	
+	
+	@RequestMapping("leetcode")
+	public String leetcode(){
+		return "LeetCode";
+	}
+	
 }
