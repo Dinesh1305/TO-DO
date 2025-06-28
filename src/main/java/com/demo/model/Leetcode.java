@@ -1,5 +1,9 @@
 package com.demo.model;
 
+import java.sql.Timestamp;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -8,7 +12,18 @@ public class Leetcode {
 @Id
 private String  name;
 private String url;
+@CreationTimestamp
+private Timestamp time;
 
+
+
+
+public Timestamp getTime() {
+	return time;
+}
+public void setTime(Timestamp time) {
+	this.time = time;
+}
 public String getName() {
 	return name;
 }

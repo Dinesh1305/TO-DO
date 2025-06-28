@@ -14,7 +14,8 @@
                     <th>No</th>
                     <th>Problem Name</th>
                     <th>URL</th>
-                  
+                    <th>Time</th>
+                    <th>Completed At</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,13 +25,8 @@
                     <td>
                         <a th:href="${prob.url}" target="_blank" th:text="${prob.url}">View</a>
                     </td>
-                    <td>
-                        <form th:action="@{/removeProblem}" method="post">
-                            <input type="hidden" th:name="name" th:value="${prob.name}" />
-                            <input type="hidden" th:name="url" th:value="${prob.url}" />
-                           
-                        </form>
-                    </td>
+                    <td th:text="${#dates.format(prob.time, 'yyyy-MM-dd HH:mm:ss')}">2025-06-04 19:00:00</td>
+                    <td th:text="${#dates.format(prob.complete, 'yyyy-MM-dd HH:mm:ss')}">2025-06-04 19:05:00</td>
                 </tr>
             </tbody>
         </table>

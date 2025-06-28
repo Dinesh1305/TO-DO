@@ -50,7 +50,7 @@ public class AddLeetcode {
 		
 		k.setName(ls.getName());
 		k.setUrl(ls.getUrl());
-		
+		k.setTime(ls.getTime());
 	    cp.save(k);
 		lr.deleteByName(ls.getName());
 		return "home";
